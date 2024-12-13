@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: grid;
+    place-items: center;
+    background-color: rgba(82, 107, 210, 0.897);
+
+}
+
+h1{
+    /* color: rgb(223, 155, 52); */
+    margin-top: 20vh;
+    margin-bottom: 30px;
+
+}
+input{
+    font-size: 1rem;
+    width: 300px;
+    padding: 6px 2px; 
+    margin: 10px 0 10px 0;
+}
+.sub{
+    background-color:rgba(82, 107, 210, 0.897);
+    cursor: pointer;
+}
+
+form{
+    /* margin-top: 20vh; */
+    text-align: center;
+    border: 5px solid rgb(18, 28, 80);
+    padding: 20px;
+    background-color: rgb(161, 202, 255);
+}
+
+a{
+    color: rgb(225, 216, 35);
+    font-size: x-large;
+}
