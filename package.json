@@ -4,5 +4,18 @@
     "hbs": "^4.2.0",
     "mongoose": "^8.8.4",
     "nodemon": "^3.1.9"
-  }
+  },
+  "name": "simple-node-app",
+  "version": "1.0.0",
+  "description": "Simple-node.js-application built to understant Canary deployment",
+  "main": "index.js",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Gurleen Kaur Sethi",
+  "license": "ISC"
 }

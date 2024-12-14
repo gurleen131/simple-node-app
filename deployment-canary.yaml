@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-node-app-canary
+spec:
+  replicas: 1  #Canary version with only 1 replica
+  selector:
+    matchLabels:
+      app: simple-node-app
+      version: canary  #Updated label for canary version
+  template:
+    metadata:
+      labels:
+        app: simple-node-app
+        version: canary  #Updated label for canary version
+    spec:
+      containers:
+      - name: simple-node-app
+        image: simple-node-app:canary  #Using canary image tag
+        ports:
+        - containerPort: 3000  #The port your app is listening to

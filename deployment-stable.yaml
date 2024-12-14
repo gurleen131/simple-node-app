@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-node-app-stable
+spec:
+  replicas: 3  # Stable version will handle the majority of the traffic
+  selector:
+    matchLabels:
+      app: simple-node-app
+      version: stable
+  template:
+    metadata:
+      labels:
+        app: simple-node-app
+        version: stable
+    spec:
+      containers:
+      - name: simple-node-app
+        image: gurleen131/simple-node-stable:latest
+        ports:
+          - containerPort: 3000
+      imagePullSecrets:
+      - name: dockerhub-secret
