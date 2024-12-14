@@ -1,5 +1,6 @@
 const express = require("express")
 const app = express()
+const mongoose = require("mongoose")
 const path = require("path")
 const hbs=require("hbs")
 const collection = require("./mongodb")
@@ -11,7 +12,7 @@ app.use(express.static(path.join(__dirname, "../public")));
 app.use(express.json())
 app.set("view engine", "hbs")
 app.set("views", templatePath)
-app.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({extended:false}))
 
 app.get("/signup", (req, res) => {
     res.render("signup")
@@ -28,7 +29,8 @@ app.post("/signup", async (req, res)=>{
             password: req.body.password,
         };
 
-        await LogInCollection.insertMany([data]);
+        const newUser = await LogInCollection.create(data);
+        console.log("Inserted document:", newUser);
 
         // Make sure the response is sent correctly
         res.render("home");
